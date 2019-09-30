@@ -21,10 +21,10 @@ module.exports = function getTimeForEducation(
     config = { family: 4 }
 ) {
     const courseHour = 800;
-    const coefWithoutKnowledge = 1.625;
+    const hourWithoutKnowledge = courseHour + 500;
     let cursWeeks = Math.ceil(courseHour / config[focus]);
     if (!knowsProgramming) {
-        cursWeeks = Math.ceil(cursWeeks * coefWithoutKnowledge);
+        cursWeeks = Math.ceil(hourWithoutKnowledge / config[focus]);
     }
     return cursWeeks;
 };
